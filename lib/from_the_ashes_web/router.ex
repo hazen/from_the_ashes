@@ -19,10 +19,13 @@ defmodule FromTheAshesWeb.Router do
     get "/", PageController, :index
     get "/hello", HelloController, :index
     get "/hello/:messenger", HelloController, :show
+    # get "/location/:messenger", HelloController, :show
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", FromTheAshesWeb do
-  #   pipe_through :api
-  # end
+  scope "/api", FromTheAshesWeb do
+    pipe_through :api
+
+    get "/api/lookup", LocationController, :index
+  end
 end
