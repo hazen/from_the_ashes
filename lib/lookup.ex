@@ -5,7 +5,7 @@ defmodule FromTheAshes.Lookup do
     with {:ok, %{body: %{"results" => [result | _]}}} <-
            Client.GoogleGeoCoding.get("json", [],
              params: %{
-               key: Application.get_env(:voyage_of_discovery, :google_api_key),
+               key: Application.get_env(:from_the_ashes, :google_api_key),
                address: address
              }
            ),

@@ -1,7 +1,7 @@
 defmodule FromTheAshes.Client.GoogleGeoCoding do
   use HTTPoison.Base
 
-  #  VoyageOfDiscovery.Client.GoogleGeoCoding.get("json", [], [params: %{key: "", address: "999 18th St, Denver, CO"}])
+  #  FromTheAshes.Client.GoogleGeoCoding.get("json", [], [params: %{key: "", address: "999 18th St, Denver, CO"}])
 
   @base_url "https://maps.googleapis.com/maps/api/geocode/"
 
