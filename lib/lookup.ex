@@ -1,5 +1,5 @@
 defmodule FromTheAshes.Lookup do
-  alias VoyageOfDiscovery.Client
+  alias FromTheAshes.Client
 
   def lookup(address) do
     with {:ok, %{body: %{"results" => [result | _]}}} <-
@@ -9,9 +9,8 @@ defmodule FromTheAshes.Lookup do
                address: address
              }
            ),
-         %{"geometry" => %{"location" => %{"lat" => lat, "lng" => long}}} <- result,
-         {:ok, encoded} <- Jason.encode(%{latitude: lat, longitude: long}) do
-      {:ok, encoded}
+         %{"geometry" => %{"location" => %{"lat" => lat, "lng" => long}}} <- result do
+      {:ok, %{latitude: lat, longitude: long}}
     end
   end
 end

@@ -13,6 +13,13 @@ defmodule FromTheAshesWeb.Router do
     plug :accepts, ["json"]
   end
 
+  # Other scopes may use custom stacks.
+  scope "/api", FromTheAshesWeb do
+    pipe_through :api
+
+    get "/lookup", LocationController, :index
+  end
+
   scope "/", FromTheAshesWeb do
     pipe_through :browser
 
@@ -20,12 +27,5 @@ defmodule FromTheAshesWeb.Router do
     get "/hello", HelloController, :index
     get "/hello/:messenger", HelloController, :show
     # get "/location/:messenger", HelloController, :show
-  end
-
-  # Other scopes may use custom stacks.
-  scope "/api", FromTheAshesWeb do
-    pipe_through :api
-
-    get "/api/lookup", LocationController, :index
   end
 end

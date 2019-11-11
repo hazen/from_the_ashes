@@ -8,7 +8,7 @@
 use Mix.Config
 
 config :from_the_ashes,
-  ecto_repos: [FromTheAshes.Repo]
+  ecto_repos: [FromTheAshes.Repo],
   generators: [binary_id: true]
 
 # Configures the endpoint

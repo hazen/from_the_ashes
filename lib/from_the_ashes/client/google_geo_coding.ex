@@ -9,6 +9,10 @@ defmodule FromTheAshes.Client.GoogleGeoCoding do
     @base_url <> url
   end
 
+  def process_request_params(params) do
+    Map.put(params, :key, System.get_env("GOOGLE_API_KEY"))
+  end
+
   def process_response_body(body) do
     case Jason.decode(body) do
       {:ok, json} -> json
