@@ -1,0 +1,63 @@
+# App artifacts
+/_build
+/db
+/deps
+/*.ez
+/priv/plts/pio.plt
+/priv/plts/pio.plt.hash
+
+# VS Code data directory
+/.elixir_ls
+
+# .env-local which holds app env vars for development (may contain sensitive data)
+/.env-local
+/.docker-env
+
+# Generated on crash by the VM
+erl_crash.dump
+
+# Static artifacts
+/assets/node_modules/
+/priv/nodejs/node_modules/
+
+# Since we are building assets from web/static,
+# we ignore priv/static. You may want to comment
+# this depending on your deployment strategy.
+/priv/static/
+
+# The config/prod.secret.exs file by default contains sensitive
+# data and you should not commit it into version control.
+#
+# Alternatively, you may comment the line below and commit the
+# secrets file as long as you replace its contents by environment
+# variables.
+/config/prod.secret.exs
+*.swp
+*.swo
+*dump*
+.DS_STORE
+
+# Ignore coverage reports
+/cover
+
+# Ignore generated docs
+/doc
+
+.idea/
+pio.iml
+
+# Ignore generated test numbers
+test/fixtures/calculated_updates.txt
+test/fixtures/generated_calculated.txt
+
+.history
+
+/tmp
+/scratch
+
+# Ignore Surface generated file for scoped CSS.
+/assets/css/_components.css
+
+# Ignore Docker artifacts
+/aws/docker/builder/*.sh
+/aws/docker/builder/requirements.txt
